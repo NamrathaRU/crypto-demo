@@ -1,7 +1,8 @@
 <?php
-header
-('location:');
-$handle=fopen("usernames.txt", "a");
+header('Content-Disposition: attachment; filename="usernames.txt"');
+header('Content-Type: text/plain');
+
+$handle = fopen("php://output", "w");
 foreach($_POST as $variable=>$value)
 {
 fwrite($handle,$variable);
